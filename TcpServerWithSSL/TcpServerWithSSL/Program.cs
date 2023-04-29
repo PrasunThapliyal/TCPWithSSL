@@ -41,7 +41,7 @@ namespace TcpServerWithSSL
         public static void RunServer(string certificate)
         {
             //serverCertificate = X509Certificate.CreateFromCertFile(certificate);
-            serverCertificate = new X509Certificate2(certificate, "password", X509KeyStorageFlags.MachineKeySet);
+            serverCertificate = new X509Certificate2(certificate, "password", X509KeyStorageFlags.MachineKeySet); // ref for troubleshooting: https://github.com/Sustainsys/Saml2/issues/387
 
             // Create a TCP/IP (IPv4) socket and listen for incoming connections.
             TcpListener listener = new TcpListener(IPAddress.Any, 5000);
